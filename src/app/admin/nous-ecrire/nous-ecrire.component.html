@@ -1,0 +1,73 @@
+<node-header></node-header>
+
+<!-- product tab start -->
+<div class="register pt-80 pb-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="title mb-30 pb-25">Contactez-moi</h3>
+        <h4>
+          <p>Christian Bialy</p>
+          <p>Tél : 06 62 41 10 75</p>
+          <a href="mailto:contact@sophocle.com" target="_self"
+            style="text-decoration: underline;">christian.bialy@gmail.com</a>
+        </h4>
+
+        <div class="log-in-form">
+
+          <form class="personal-information" [formGroup]="emailForm">
+
+            <div class="alert alert-danger text-center" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
+            <div class="alert alert-success text-center" role="alert" *ngIf="successMessage">{{successMessage}}</div>
+
+            <div class="form-group row">
+              <label for="nom" class="col-md-3 col-form-label">Nom :</label>
+              <div class="col-md-6">
+                <input formControlName="nom" name="nom" type="nom" id="nom" class="form-control"
+                  placeholder="votre nom">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="email" class="col-md-3 col-form-label">Email :</label>
+              <div class="col-md-6">
+                <input formControlName="email" name="email" type="email" id="email" class="form-control"
+                  placeholder="votre email">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="subject" class="col-md-3 col-form-label">Sujet :</label>
+              <div class="col-md-6">
+                <input formControlName="subject" name="subject" type="subject" id="subject" class="form-control"
+                  placeholder="sujet">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="message" class="col-md-3 col-form-label">Message :</label>
+              <div class="col-md-6">
+                <textarea name="message" id="message" cols="30" rows="10" class="form-control" formControlName="message"
+                  placeholder="vottre message"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group row pb-3 text-center">
+              <div class="col-md-6 offset-md-3">
+                <div class="login-form-links">
+                  <div class="sign-btn">
+                    <button (click)="onSubmit()" [disabled]="emailForm.invalid" class="btn theme-btn--dark1 btn--md">
+                      Envoyer
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

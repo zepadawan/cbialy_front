@@ -1,0 +1,6 @@
+{
+  "production": false,
+  "api": "https://galeryofbialy.eu:8081/",
+  "api_image": "https://galeryofbialy.eu:8081/public/images/",
+  "emailTo": "lesophocledev@gmail.com"
+}

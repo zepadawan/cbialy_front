@@ -1,0 +1,31 @@
+<node-header-admin [page]="page" [parentPage]="parentPage" [currentPage]="currentpage"></node-header-admin>
+<div class="col-sm-6 offset-sm-3 mt-2">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr style="width:100%">
+        <th style="width:10%" scope="col">Id</th>
+        <th style="width:20%" scope="col">page</th>
+        <th style="width:10%" scope="col">numéro</th>
+        <th style="width:50%" scope="col">texte...</th>
+        <th style="width:10%">Administration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let texte of textes">
+        <th scope="row"> {{texte.id}}</th>
+        <td>{{texte.page_selector}}</td>
+        <td>{{texte.numero}}</td>
+        <td>{{texte.texte}}</td>
+        <td>
+          <button class="pro-btn" title="Editer" [routerLink]="['/edit-texte',texte.id]"><i
+              class="ion-android-create"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <button type="button" routerLink="/create-categories" routerLinkActive="router-link-active"
+      class="btn theme-btn--dark1 btn--md m-2">Nouveau Texte</button>
+
+  </div>
+</div>

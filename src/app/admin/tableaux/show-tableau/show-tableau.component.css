@@ -1,0 +1,81 @@
+.ligthbox{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .9) ;
+  z-index: 10;
+  overflow: auto;
+  animation: ligthboxIn .5s;
+
+}
+
+.ligthbox__close{
+  background : url("./img/cross.svg") center center / 100% 100% no-repeat transparent;
+  width: 25px;
+  height: 25px;
+  border:none;
+  position: fixed;
+  top: 50px;
+  right: 28px;
+
+}
+
+.ligthbox__next,
+.ligthbox__prev{
+  border: none ;
+  background:url("./img/arrow.svg") center center / 16px 28px no-repeat;
+  width: 50px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-top: -14px ;
+  z-index: 11;
+}
+
+.ligthbox__next:hover,
+.ligthbox__prev:hover{
+  opacity: 1;
+}
+
+.ligthbox__prev{
+  right: auto;
+  left: 0;
+  transform:rotate(180deg);
+}
+
+.ligthbox__container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  min-height: 100vh ;
+  text-indent: -5000px;
+
+}
+
+.ligthbox__container img {
+  max-width: 100%;
+  height: auto;
+  animation: ligthboxIn .5s;
+
+}
+
+.ligthbox button{
+  opacity: .5;
+  cursor: pointer;
+  transition: opacity .3s;
+  text-indent: -5000px;
+}
+
+.ligthbox button :hover{
+  opacity: 1;
+}
+
+@keyframes ligthboxIn{
+  from {opacity:0;}
+  to {opacity: 1;}
+}

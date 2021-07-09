@@ -1,0 +1,33 @@
+<node-header-admin [page]="page" [parentPage]="parentPage" [currentPage]="currentpage"></node-header-admin>
+
+<div class="col-sm-6 offset-sm-3 mt-2">
+
+  <div class="row">
+
+    <div class="alert alert-danger text-center" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
+    <div class="alert alert-success text-center" role="alert" *ngIf="successMessage">{{successMessage}}</div>
+
+    <div class="col-md-8">
+
+      <form [formGroup]="texteForm">
+
+        <div class="form-group">
+          <label for="page">page du texte</label>
+        </div>
+
+        <div class="form-group">
+          <label for="libelle">Libellé de la catégorie</label>
+          <input type="text" placeholder="saisir le libellé de la catégorie" id="title" formControlName="libelle"
+            class="form-control bg-light">
+        </div>
+
+        <button type="button" (click)="onSubmit(true)" class="btn theme-btn--dark1 btn--md m-2"
+          [disabled]="texteForm.invalid">Ajouter</button>
+        <button type="button" (click)="onSubmit(false)" class="btn theme-btn--dark1 btn--md m-2"
+          [disabled]="texteForm.invalid">Ajouter et continuer</button>
+        <button type="button" routerLink="/admin-textes" routerLinkActive="router-link-active"
+          class="btn theme-btn--dark1 btn--md m-2">Annuler</button>
+
+      </form>
+    </div>
+  </div>

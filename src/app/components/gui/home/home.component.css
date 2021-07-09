@@ -1,0 +1,21 @@
+/* div.box-images { */
+  .box-images {
+    text-align:center;
+    margin:auto;
+    display:flex;
+    position:relative; 
+    width: auto;
+    width: 900px;
+    height: 900px ;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* transform: initial;  */
+}
+
+.texte-home{
+  text-align: center;
+  font:Verdana, Geneva, sans-serif;
+  position: relative;
+  top: 50%; /* poussé de la moitié de hauteur du référent */
+}
