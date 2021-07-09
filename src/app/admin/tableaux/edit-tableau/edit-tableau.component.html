@@ -1,7 +1,4 @@
-<node-header-admin
-  [parentPage]="parentPage"
-  [currentPage]="currentpage"
-></node-header-admin>
+<node-header-admin [parentPage]="parentPage" [currentPage]="currentpage"></node-header-admin>
 
 <!-- <form ref='uploadForm' id='uploadForm' action='http://localhost:3000/upload' method='post' encType="multipart/form-data">
     <input type="file" name="sampleFile" />
@@ -10,105 +7,58 @@
  -->
 
 <div *ngIf="!loading" class="col-sm-6 offset-sm-3 mt-2">
+
   <div class="row">
-    <div
-      class="alert alert-danger text-center"
-      role="alert"
-      *ngIf="errorMessage"
-    >
-      {{ errorMessage }}
-    </div>
-    <div
-      class="alert alert-success text-center"
-      role="alert"
-      *ngIf="successMessage"
-    >
-      {{ successMessage }}
-    </div>
+
+    <div class="alert alert-danger text-center" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
+    <div class="alert alert-success text-center" role="alert" *ngIf="successMessage">{{successMessage}}</div>
 
     <div class="col-md-4">
-      <button
-        type="button"
-        (click)="filePicker.click()"
-        class="btn theme-btn--dark1 btn--md m-2"
-      >
-        Modifier l' image
-      </button>
-      <input
-        style="display: none"
-        type="file"
-        name="sampleFile"
-        #filePicker
-        (change)="onImagePick($event)"
-        class="form-control"
-      />
+      <button type="button" (click)="filePicker.click()" class="btn theme-btn--dark1 btn--md m-2">Modifier l'
+        image</button>
+      <input style="display: none;" type="file" name="sampleFile" #filePicker (change)="onImagePick($event)"
+        class="form-control">
       <!-- <div class="image-preview" *ngIf="imagePreview"> -->
       <div class="image-preview">
-        <img [src]="imagePreview" alt="" />
+        <img [src]="imagePreview" alt="">
       </div>
     </div>
 
     <div class="col-md-8">
+
       <form [formGroup]="tableauForm">
+
+
         <div class="form-group">
           <label for="title">Nom</label>
-          <input
-            type="text"
-            placeholder="saisir le nom du tableau"
-            id="title"
-            formControlName="name"
-            class="form-control"
-          />
+          <input type="text" placeholder="saisir le nom du tableau" id="title" formControlName="name"
+            class="form-control">
         </div>
 
         <div class="form-group">
           <label for="prix">prix (en €)</label>
-          <input
-            type="text"
-            placeholder="par ex: 500,00"
-            id="prix"
-            class="form-control"
-            formControlName="prix"
-            min="5"
-          />
+          <input type="text" placeholder="par ex: 500,00" id="prix" class="form-control" formControlName="prix" min="5">
         </div>
 
         <div class="form-group">
           <label for="description">Description</label>
-          <textarea
-            name="description"
-            id="description"
-            cols="30"
-            rows="3"
-            class="form-control"
-            formControlName="description"
-            placeholder="description du tableau"
-          ></textarea>
+          <textarea name="description" id="description" cols="30" rows="3" class="form-control"
+            formControlName="description" placeholder="description du tableau"></textarea>
         </div>
 
         <div class="form-group">
           <label for="title">Dimension</label>
-          <input
-            type="text"
-            placeholder="dimension du tableau"
-            id="dimension"
-            formControlName="dimension"
-            class="form-control"
-          />
+          <input type="text" placeholder="dimension du tableau" id="dimension" formControlName="dimension"
+            class="form-control">
         </div>
 
         <div class="form-group">
           <label for="title">Categorie</label>
-          <select
-            class="select"
-            size="1"
-            aria-label="size 3 select example"
-            formControlName="categorie"
-            class="form-control"
-          >
+          <select class="select" size="1" aria-label="size 3 select example" formControlName="categorie"
+            class="form-control">
             <option selected>Choisir ...</option>
-            <option *ngFor="let categ of categories" value="{{ categ.id }}">
-              {{ categ.libelle }}
+            <option *ngFor="let categ of categories" value="{{categ.id}}">
+              {{categ.libelle}}
             </option>
           </select>
         </div>
@@ -117,7 +67,7 @@
           <label for="visible">Visible </label>
           <div class="input-group-prepend">
             <div class="input-group-text">
-              <input type="checkbox" formControlName="visible" />
+              <input type="checkbox" formControlName="visible">
             </div>
           </div>
         </div>
@@ -125,45 +75,22 @@
         <div class="input-group mb-3">
           <label for="visible">A Vendre</label>
           <div class="input-group-text">
-            <input type="checkbox" formControlName="a_vendre" />
+            <input type="checkbox" formControlName="a_vendre">
           </div>
         </div>
 
+
         <div class="form-group">
           <label for="title">Année de création</label>
-          <input
-            type="text"
-            placeholder="année de création (non obligatoire)"
-            id="anneCreation"
-            formControlName="anneCreation"
-            class="form-control"
-          />
+          <input type="text" placeholder="année de création (non obligatoire)" id="anneCreation"
+            formControlName="anneCreation" class="form-control">
         </div>
 
         <!-- (click)="onSubmit()" -->
-        <button
-          type="button"
-          (click)="onSubmit()"
-          class="btn theme-btn--dark1 btn--md m-2"
-          [disabled]="tableauForm.invalid"
-        >
-          Enregister
-        </button>
-        <button
-          type="button"
-          (click)="onAnnul()"
-          class="btn theme-btn--dark1 btn--md m-2"
-        >
-          Annuler
-        </button>
-        <button
-          type="button"
-          (click)="onDelete()"
-          class="btn theme-btn--dark1 btn--md m-2"
-        >
-          Supprimer
-        </button>
+        <button type="button" (click)="onSubmit()" class="btn theme-btn--dark1 btn--md m-2"
+          [disabled]="tableauForm.invalid">Enregister</button>
+        <button type="button" (click)="onAnnul()" class="btn theme-btn--dark1 btn--md m-2">Annuler</button>
       </form>
+
     </div>
   </div>
-</div>

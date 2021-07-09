@@ -7,7 +7,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TableauxService } from './../../../services/tableaux.service';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { ConfirmationDialogService } from '../../confirmation-dialog/confirmation-dialog.service';
 
 @Component({
   selector: 'node-edit-tableau',
@@ -35,8 +34,7 @@ export class EditTableauComponent implements OnInit {
     private fb: FormBuilder,
     private categoryService: CategoryService,
     private router: Router,
-    private route: ActivatedRoute,
-    private confirmationDialogService: ConfirmationDialogService
+    private route: ActivatedRoute
   ) { }
 
 
@@ -110,9 +108,7 @@ export class EditTableauComponent implements OnInit {
     newTableau.dimension = this.tableauForm.get('dimension').value;
     newTableau.id_category = this.tableauForm.get('categorie').value;
     newTableau.annee_creation = this.tableauForm.get('anneCreation').value;
-    if (this.tableauForm.get('sampleFile').value){
-      newTableau.nom_image = (this.tableauForm.get('sampleFile').value).name;
-    }
+    newTableau.nom_image = (this.tableauForm.get('sampleFile').value).name;
     newTableau.visible = (this.tableauForm.get('visible').value);
     newTableau.a_vendre = (this.tableauForm.get('a_vendre').value);
 
@@ -145,16 +141,6 @@ export class EditTableauComponent implements OnInit {
   onAnnul() {
     this.tableauForm.reset();
     this.router.navigate(['/shop']);
-  }
-
-  onDelete(){
-    this.confirmationDialogService.confirm('Confirmation de Suppression', 'Supprimer le Tableau ?')
-    .then((confirmed) => {
-      console.log('this.tableau.id', this.tableau.id);
-      this.tableauxService.deleteTableau(this.tableau.id)
-      console.log('Delete tableau OK !:', confirmed)
-    })
-    .catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
   }
 
 }

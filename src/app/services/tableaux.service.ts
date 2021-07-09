@@ -63,7 +63,7 @@ export class TableauxService {
   }
 
   createNewTableau(newtableau: Tableau) {
-    const url = `${environment.api + 'oeuvres'}`;
+    const url = `${environment.api + 'oeuvres/register'}`;
     const body = {
       tableau: newtableau
     }
@@ -102,21 +102,6 @@ export class TableauxService {
         }
       )
     })
-  }
-
-  deleteTableau(id:number){
-    const url = `${environment.api + 'oeuvres/' + id}`;
-    return new Promise( (resolve, reject)=>{
-    this.http.delete(url).subscribe(
-      (data) =>{
-        resolve(data);
-    },
-    (err) => {
-      reject(err);
-    }
-    )
-    })
-
   }
 
   // Afficahege par pages => Pagination
