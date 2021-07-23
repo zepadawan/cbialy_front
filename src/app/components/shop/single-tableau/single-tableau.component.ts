@@ -47,14 +47,11 @@ export class SingleTableauComponent implements OnInit {
   }
 
   getCategorieName(id: number) {
-    this.categoryService.getCategoryNameById(id)
+    this.categoryService.getCategoryById(id)
       .then((data: Category) => {
         this.categorie = data.libelle;
       })
       .catch()
-
-
-
 
   }
 

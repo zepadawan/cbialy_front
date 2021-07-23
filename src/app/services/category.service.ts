@@ -1,6 +1,7 @@
 import { Result } from './../models/result';
 import { environment } from './../../environments/environment';
-import { Subject } from 'rxjs';
+import { Observable, Subject} from 'rxjs';
+import {map} from 'rxjs/operators'
 import { Category } from './../models/category';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -23,9 +24,9 @@ export class CategoryService {
     this.categorySubject.next(this.categories);
   }
 
-  getCategoriesFromServer() {
+  async getCategoriesFromServer() {
     const url = `${environment.api}` + 'categories';
-    return new Promise((resolve, reject) => {
+    return await new Promise((resolve, reject) => {
       this.http.get<any>(url).subscribe(
         (data: Result) => {
           if (data.status == 200) {
@@ -40,9 +41,9 @@ export class CategoryService {
     })
   };
 
-  getCategoryNameById(id: number) {
+  async getCategoryById(id: number)  {
     const url = `${environment.api + 'categories/' + id}`;
-    return new Promise((resolve, reject) => {
+    return await new Promise<Category>((resolve, reject) => {
       this.http.get(url).subscribe(
         (data: Result) => {
           if (data.status == 200) {

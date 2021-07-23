@@ -32,7 +32,7 @@ export class CreateCategorieComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(
       (params: Params) => {
-        this.categoryService.getCategoryNameById(params.id)
+        this.categoryService.getCategoryById(params.id)
           .then((data: Category) => {
             this.categorie = data;
             this.categorieForm = this.fb.group({

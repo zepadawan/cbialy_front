@@ -31,6 +31,10 @@ import { MyEditorComponent } from './admin/myeditor/myeditor.component';
 //RGPD
 import {NgcCookieConsentModule, NgcCookieConsentConfig} from 'ngx-cookieconsent';
 
+// MATERIAL
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
+
 import { AdminTableauComponent } from './admin/tableaux/admin-tableau/admin-tableau.component';
 import { CreateTableauComponent } from './admin/tableaux/creation-tableau/creation-tableau.component';
 import { EditTableauComponent } from './admin/tableaux/edit-tableau/edit-tableau.component';
@@ -154,6 +158,7 @@ const cookieConfig:NgcCookieConsentConfig = {
     ReactiveFormsModule,
     FormsModule,
     EditorModule,
+    DragDropModule,
     NgcCookieConsentModule.forRoot(cookieConfig),
   ],
   providers: [
