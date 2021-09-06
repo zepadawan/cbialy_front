@@ -25,7 +25,7 @@
           <div class="single-product-info">
             <div class="single-product-head">
               <h2 class="title mb-20">nom : {{ tableau?.nom }}</h2>
-              <span class="product-price mr-20">{{ tableau?.nom }}</span>
+              <!-- <span class="product-price mr-20">{{ tableau?.nom }}</span> -->
 
               <!-- <div class="star-content mb-20">
                                 <span class="star-on"><i class="ion-ios-star"></i> </span>
@@ -39,9 +39,7 @@
             <div class="product-body mb-40">
               <div class="d-flex align-items-center mb-30">
                 <!-- <h6 class="product-price mr-20"><del class="del">{{ tableau?.prix }} €</del> -->
-                <span class="product-price mr-20" *ngIf="isAdmin"
-                  >{{ tableau?.prix }} €</span
-                >
+                <span class="product-price mr-20">{{ tableau?.prix }} €</span>
                 <!-- </h6> -->
                 <!-- <span class="badge position-static bg-dark rounded-0">Save 10%</span> -->
               </div>
