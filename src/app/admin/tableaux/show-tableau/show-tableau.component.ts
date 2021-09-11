@@ -37,7 +37,7 @@ export class ShowTableauComponent implements OnInit {
   onClose() {
     console.log('on close');
 
-    this.router.navigate(['/shop']);
+    this.router.navigate(['/avendre']);
   }
 
 

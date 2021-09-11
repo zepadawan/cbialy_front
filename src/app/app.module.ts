@@ -50,6 +50,7 @@ import { ShowTexteComponent } from './admin/textes/show-texte/show-texte.compone
 import { NousEcrireComponent } from './admin/nous-ecrire/nous-ecrire.component';
 import { ConfigService } from './services/config.service';
 import { environment } from 'src/environments/environment';
+import { AvendreComponent } from './components/shop/avendre/avendre.component';
 
 export function ConfigLoader(configService: ConfigService) {
   //Note: this factory need to return a function (that return a promise)
@@ -147,6 +148,7 @@ const cookieConfig:NgcCookieConsentConfig = {
     ShowTexteComponent,
 
     MyEditorComponent,
+     AvendreComponent,
 
 
   ],

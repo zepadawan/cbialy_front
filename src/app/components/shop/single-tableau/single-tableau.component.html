@@ -39,13 +39,15 @@
             <div class="product-body mb-40">
               <div class="d-flex align-items-center mb-30">
                 <!-- <h6 class="product-price mr-20"><del class="del">{{ tableau?.prix }} €</del> -->
-                <span class="product-price mr-20">{{ tableau?.prix }} €</span>
+                <span class="product-price mr-20"
+                  >Prix : {{ tableau?.prix }} €</span
+                >
                 <!-- </h6> -->
                 <!-- <span class="badge position-static bg-dark rounded-0">Save 10%</span> -->
               </div>
               <p>Description : {{ tableau?.description }}</p>
               <p>Dimension : {{ tableau?.dimension }}</p>
-              <p>Categorie : {{ categorie }}</p>
+              <!-- <p>Categorie : {{ categorie }}</p> -->
               <p>Année de création : {{ tableau?.annee_creation }}</p>
             </div>
             <div>
@@ -68,7 +70,9 @@
                   title="Agrandir"
                   class="icon-magnifier"
                 >
-                  Agrandir
+                  <span class="product-price mr-20" style="margin-left: 20px">
+                    AGRANDIR</span
+                  >
                 </span>
               </a>
             </div>

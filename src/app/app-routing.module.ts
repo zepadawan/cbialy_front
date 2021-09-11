@@ -27,6 +27,7 @@ import { EditTableauComponent } from './admin/tableaux/edit-tableau/edit-tableau
 import { AdminTableauComponent } from './admin/tableaux/admin-tableau/admin-tableau.component';
 import { CreateTableauComponent } from './admin/tableaux/creation-tableau/creation-tableau.component';
 import { NousEcrireComponent } from './admin/nous-ecrire/nous-ecrire.component';
+import { AvendreComponent } from './components/shop/avendre/avendre.component';
 
 
 const routes: Routes = [
@@ -36,6 +37,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent, },
   { path: 'shop', component: ShopComponent, },
   { path: 'tableaux', component: TableauxComponent, },
+  { path: 'avendre', component: AvendreComponent, },
+
   { path: 'single-tableau/:id', component: SingleTableauComponent, },
   { path: 'show-tableau/:id', component: ShowTableauComponent, },
   { path: 'category/:id', component: CategoryComponent, },

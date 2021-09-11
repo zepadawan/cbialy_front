@@ -35,12 +35,12 @@
               <div class="card-body">
                 <div class="product-thumbnail position-relative">
                   <span
-                    *ngIf="isAdmin && tableau.a_vendre == 1"
+                    *ngIf="tableau.a_vendre == 1"
                     class="badge badge-success top-right"
                     >A vendre</span
                   >
                   <span
-                    *ngIf="isAdmin && tableau.a_vendre == 0"
+                    *ngIf="tableau.a_vendre == 0"
                     class="badge badge-danger top-right"
                     >Vendu</span
                   >
