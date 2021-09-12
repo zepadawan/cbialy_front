@@ -24,8 +24,7 @@ export class AvendreComponent implements OnInit, OnDestroy {
         this.tableauSubscription = this.tableauxService.tableauSubject.subscribe(
           (data: Tableau[]) => {
             const tabs = data.filter(tableau => {
-              return (tableau.id_category == 15);
-              // return (tableau.a_vendre == +1);
+              return (tableau.a_vendre == 1 && tableau.visible ==1);
             });
             this.tableaux = tabs;
           }
